@@ -11,9 +11,9 @@ import {
   muestraUsuarios
 } from "./navegacion.js";
 
-const SIN_ALUMNOS = /* html */
+const SIN_REGISTRO = /* html */
   `<option value="">
-    -- Sin Alumnos --
+    -- Sin Registro --
   </option>`;
 
 const firestore = getFirestore();
@@ -31,7 +31,7 @@ selectEmpleados(select,valor) {
   daoEmpleado.orderBy("nombre").
     onSnapshot(
       snap => {
-        let html = SIN_ALUMNOS;
+        let html = SIN_REGISTRO;
         snap.forEach(doc =>html += htmlAlumno(doc, valor));
         select.innerHTML = html;
       },

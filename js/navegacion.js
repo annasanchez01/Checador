@@ -1,6 +1,6 @@
 export function
   muestraEmpleados() {
-  location.href = "alumnos.html";
+  location.href = "Registros.html";
 }
 
 export function

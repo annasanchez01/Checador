@@ -44,7 +44,7 @@ class MiNav extends HTMLElement {
           if (roles.has("Cliente")) {
             html += /* html */
               `<li>
-               <a href="alumnos.html">
+               <a href="Registro.html">
                 Checar Entrada/Salida</a>
               </li>
               <li>
