@@ -18,7 +18,7 @@ class MiNav extends HTMLElement {
             Usuario</a>
         </li>
       <li>
-        <a href="chat.html"> Pide darte de alta como cliente</a>
+        <a href="chat.html"> Chat</a>
       </li>
       </ul>`;
     this.ul =
@@ -50,10 +50,6 @@ class MiNav extends HTMLElement {
               <li>
                <a href="usuarioNuevo.html">
                  Justificar inasistencia</a>
-              </li>
-              <li>
-                <a href=
-                  "chat.html">Chat</a>
               </li>`;
           }
           /* Enlaces para solo
