@@ -26,8 +26,7 @@ getAuth().
     "../lib/tiposFire.js").User}
     usuario */
 async function protege(usuario) {
-  if (tieneRol(usuario,
-    ["Cliente"],)) {
+  if (tieneRol(usuario,["Cliente"],)) {
     consulta();
   }
 }
