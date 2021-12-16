@@ -5,5 +5,5 @@ export function
 
 export function
   muestraUsuarios() {
-  location.href = "usuarios.html";
+  location.href = "index.html";
 }
