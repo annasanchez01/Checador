@@ -12,8 +12,7 @@ import {
 /** @type {HTMLFormElement} */
 const forma = document["forma"];
 /** @type {HTMLImageElement} */
-const avatar = document.
-  querySelector("#avatar");
+const avatar = document.querySelector("#avatar");
 
 /* Escucha cambios de usuario.
  * El primer parámetro es una

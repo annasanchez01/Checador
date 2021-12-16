@@ -7,19 +7,17 @@ import {
   muestraError
 } from "../lib/util.js";
 import {
-  muestraAlumnos
+  muestraEmpleados
 } from "./navegacion.js";
 import {
   tieneRol
 } from "./seguridad.js";
 
-const daoAlumno =
-  getFirestore().
-    collection("Alumno");
+const daoEmpleado = getFirestore().collection("Empleado");
 /** @type {HTMLFormElement} */
 const forma = document["forma"];
-getAuth().onAuthStateChanged(
-  protege, muestraError);
+
+getAuth().onAuthStateChanged(protege, muestraError);
 
 /** @param {import(
     "../lib/tiposFire.js").User}
@@ -50,10 +48,9 @@ async function guarda(evt) {
       fecha,
       hora
     };
-    await daoAlumno.add(modelo);
-    muestraAlumnos();
+    await daoEmpleado.add(modelo);
+    muestraEmpleados();
   } catch (e) {
     muestraError(e);
   }
 }
-

@@ -27,8 +27,7 @@ async function protege(usuario) {
 }
 
 function consulta() {
-  daoEmpleado.orderBy("nombre").onSnapshot(
-      htmlLista, errConsulta);
+  daoEmpleado.orderBy("nombre").onSnapshot(htmlLista, errConsulta);
 }
 
 /**
@@ -38,8 +37,7 @@ function consulta() {
 function htmlLista(snap) {
   let html = "";
   if (snap.size > 0) {
-    snap.forEach(doc =>
-      html += htmlFila(doc));
+    snap.forEach(doc => html += htmlFila(doc));
   } else {
     html += /* html */
       `<li class="vacio">

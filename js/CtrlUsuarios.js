@@ -18,7 +18,7 @@ import {
 const lista = document.querySelector("#lista");
 const firestore = getFirestore();
 const daoRol = firestore.collection("Rol");
-const daoAlumno = firestore.collection("Alumno");
+const daoEmpleado = firestore.collection("Empleado");
 const daoUsuario = firestore.collection("Usuario");
 
 getAuth().onAuthStateChanged(protege, muestraError);
@@ -71,7 +71,7 @@ async function htmlFila(doc) {
                       Usuario} */
   const data = doc.data();
   const img = cod(await urlStorage(doc.id));
-  const alumno = await buscaAlumno(data.alumnoId);
+  const alumno = await buscaAlumno(data.usuarioId);
   const roles = await buscaRoles(data.rolIds);
   const parámetros = new URLSearchParams();
   parámetros.append("id", doc.id);
@@ -101,10 +101,7 @@ async function htmlFila(doc) {
 async function
   buscaAlumno(id) {
   if (id) {
-    const doc =
-      await daoAlumno.
-        doc(id).
-        get();
+    const doc = await daoEmpleado.doc(id).get();
     if (doc.exists) {
       /**
        * @type {import(

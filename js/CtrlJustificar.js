@@ -11,14 +11,12 @@ import {
 import {
   checksRoles,
   guardaUsuario,
-  selectAlumnos
 } from "./usuarios.js";
 
 /** @type {HTMLFormElement} */
 const forma = document["forma"];
 /** @type {HTMLUListElement} */
-const listaRoles = document.
-  querySelector("#listaRoles");
+const listaRoles = document.querySelector("#listaRoles");
 
 getAuth().onAuthStateChanged(protege, muestraError);
 
@@ -28,7 +26,6 @@ getAuth().onAuthStateChanged(protege, muestraError);
 async function protege(usuario) {
   if (tieneRol(usuario,["Cliente"])) {
     forma.addEventListener("submit", guarda);
-    selectAlumnos(forma.alumnoId, "");
     checksRoles(listaRoles, []);
   }
 }

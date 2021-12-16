@@ -18,7 +18,7 @@ const SIN_ALUMNOS = /* html */
 
 const firestore = getFirestore();
 const daoRol = firestore.collection("Rol");
-const daoAlumno = firestore.collection("Alumno");
+const daoEmpleado = firestore.collection("Empleado");
 const daoUsuario = firestore.collection("Usuario");
 
 /**
@@ -26,9 +26,9 @@ const daoUsuario = firestore.collection("Usuario");
     HTMLSelectElement} select
  * @param {string} valor */
 export function
-  selectAlumnos(select,valor) {
+selectEmpleados(select,valor) {
   valor = valor || "";
-  daoAlumno.orderBy("nombre").
+  daoEmpleado.orderBy("nombre").
     onSnapshot(
       snap => {
         let html = SIN_ALUMNOS;
@@ -37,7 +37,7 @@ export function
       },
       e => {
         muestraError(e);
-        selectAlumnos(select, valor);
+        selectEmpleados(select, valor);
       }
     );
 }
@@ -137,15 +137,15 @@ export async function
     id) {
   try {
     evt.preventDefault();
-    const alumnoId =
+    const empleadoId =
       getForánea(formData,
-        "alumnoId");
+        "empleadoId");
     const rolIds =
       formData.getAll("rolIds");
     await daoUsuario.
       doc(id).
       set({
-        alumnoId,
+        empleadoId,
         rolIds
       });
     const avatar =

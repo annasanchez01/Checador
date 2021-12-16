@@ -7,8 +7,7 @@ import {
 } from "../lib/util.js";
 
 const firestore = getFirestore();
-const daoUsuario = firestore.
-  collection("Usuario");
+const daoUsuario = firestore.collection("Usuario");
 
 export async function
   iniciaSesión() {
@@ -20,15 +19,13 @@ export async function
       GoogleAuthProvider} */
   const provider =
     // @ts-ignore
-    new firebase.auth.
-      GoogleAuthProvider();
+    new firebase.auth. GoogleAuthProvider();
   /* Configura el proveedor de
    * Google para que permita
    * seleccionar de una lista. */
   provider.setCustomParameters(
     { prompt: "select_account" });
-  await getAuth().
-    signInWithRedirect(provider);
+  await getAuth().signInWithRedirect(provider);
 }
 
 /** @param {import(
@@ -37,6 +34,7 @@ export async function
  * @param {string[]} roles
  * @returns {Promise<boolean>} */
 export async function
+
   tieneRol(usuario, roles) {
   if (usuario && usuario.email) {
     const rolIds =
