@@ -11,10 +11,6 @@ import {
   muestraUsuarios
 } from "./navegacion.js";
 
-const SIN_ALUMNOS = /* html */
-  `<option value="">
-    -- Sin Alumnos --
-  </option>`;
 
 const firestore = getFirestore();
 const daoRol = firestore.collection("Rol");
@@ -25,6 +21,22 @@ const daoUsuario = firestore.collection("Usuario");
  * @param {
     HTMLSelectElement} select
  * @param {string} valor */
+export function
+  selectAlumnos(select,valor) {
+  valor = valor || "";
+  daoAlumno.orderBy("nombre").
+    onSnapshot(
+      snap => {
+        snap.forEach(doc =>html += htmlAlumno(doc, valor));
+        select.innerHTML = html;
+      },
+      e => {
+        muestraError(e);
+        selectAlumnos(select, valor);
+      }
+    );
+}
+
 /**
  * @param {
   import("../lib/tiposFire.js").
