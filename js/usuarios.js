@@ -25,23 +25,6 @@ const daoUsuario = firestore.collection("Usuario");
  * @param {
     HTMLSelectElement} select
  * @param {string} valor */
-export function
-  selectAlumnos(select,valor) {
-  valor = valor || "";
-  daoAlumno.orderBy("nombre").
-    onSnapshot(
-      snap => {
-        let html = SIN_ALUMNOS;
-        snap.forEach(doc =>html += htmlAlumno(doc, valor));
-        select.innerHTML = html;
-      },
-      e => {
-        muestraError(e);
-        selectAlumnos(select, valor);
-      }
-    );
-}
-
 /**
  * @param {
   import("../lib/tiposFire.js").

@@ -31,6 +31,7 @@ async function protege(usuario) {
     ["Administrador"])) {
     forma.addEventListener(
       "submit", guarda);
+
   }
 }
 
