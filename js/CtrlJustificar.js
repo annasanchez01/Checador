@@ -28,7 +28,7 @@ import {
       usuario */
   async function protege(usuario) {
     if (tieneRol(usuario,
-      ["Administrador"])) {
+      ["Cliemte"])) {
       forma.addEventListener(
         "submit", guarda);
       selectAlumnos(
