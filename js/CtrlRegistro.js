@@ -58,19 +58,19 @@ function htmlFila(doc) {
   const data = doc.data();
   const matricula = cod(data.matricula);
   const nombre = cod(data.nombre);
-  var fsf= cod(data.fecha);
-  var fecha = new Date(fsf);
-  var hr = cod(data.hora);
+  var fecha= cod(data.fecha);
+  //var fecha = new Date(fsf);
+  var hora = cod(data.hora);
 
   var espacio="[   -   ]";
-  var dformat = [fecha.getDate()+1, fecha.getMonth()+1, fecha.getFullYear()].join('/');
+ // var dformat = [fecha.getDate()+1, fecha.getMonth()+1, fecha.getFullYear()].join('/');
   const parámetros =
     new URLSearchParams();
   parámetros.append("id", doc.id);
   return ( /* html */
     `<li>
         <strong class="primario">
-         ${nombre} ${dformat}${espacio} ${hr} ${espacio}${matricula}
+         ${nombre} ${fecha}${espacio} ${hora} ${espacio}${matricula}
         </strong>
     
     </li>`);
