@@ -71,10 +71,9 @@ function htmlFila(doc) {
   var fsf= cod(data.fecha);
   var fecha = new Date(fsf);
   var hr = cod(data.hora);
-  var hora = new Date(hr);
+
   var espacio="[   -   ]";
   var dformat = [fecha.getDate()+1, fecha.getMonth()+1, fecha.getFullYear()].join('/');
-  var hformat = [hora.getHours(), hora.getMinutes(), hora.getSeconds()].join('/');
   const parámetros =
     new URLSearchParams();
   parámetros.append("id", doc.id);
@@ -83,7 +82,7 @@ function htmlFila(doc) {
       <a class="fila" href=
   "alumno.html?${parámetros}">
         <strong class="primario">
-         ${nombre} ${dformat}${espacio} ${hformat} ${espacio}${matricula}
+         ${nombre} ${dformat}${espacio} ${hr} ${espacio}${matricula}
         </strong>
       </a>
      
