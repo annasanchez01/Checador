@@ -20,29 +20,22 @@ const forma = document["forma"];
 const listaRoles = document.
   querySelector("#listaRoles");
 
-getAuth().onAuthStateChanged(
-  protege, muestraError);
+getAuth().onAuthStateChanged(protege, muestraError);
 
 /** @param {import(
     "../lib/tiposFire.js").User}
     usuario */
 async function protege(usuario) {
-  if (tieneRol(usuario,
-    ["Cliente"])) {
-    forma.addEventListener(
-      "submit", guarda);
-    selectAlumnos(
-      forma.alumnoId, "");
+  if (tieneRol(usuario,["Cliente"])) {
+    forma.addEventListener("submit", guarda);
+    selectAlumnos(forma.alumnoId, "");
     checksRoles(listaRoles, []);
   }
 }
 
 /** @param {Event} evt */
 async function guarda(evt) {
-  const formData =
-    new FormData(forma);
-  const id = getString(
-    formData, "cue").trim();
-  await guardaUsuario(evt,
-    formData, id);
+  const formData = new FormData(forma);
+  const id = getString( formData, "nombre").trim();
+  await guardaUsuario(evt,formData, id);
 }

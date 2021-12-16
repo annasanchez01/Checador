@@ -15,32 +15,25 @@ import {
 
 /** @type {HTMLUListElement} */
 // @ts-ignore
-const lista = document.
-  querySelector("#lista");
+const lista = document.querySelector("#lista");
 const firestore = getFirestore();
-const daoRol = firestore.
-  collection("Rol");
-const daoAlumno = firestore.
-  collection("Alumno");
-const daoUsuario = firestore.
-  collection("Usuario");
+const daoRol = firestore.collection("Rol");
+const daoAlumno = firestore.collection("Alumno");
+const daoUsuario = firestore.collection("Usuario");
 
-getAuth().onAuthStateChanged(
-  protege, muestraError);
+getAuth().onAuthStateChanged(protege, muestraError);
 
 /** @param {import(
     "../lib/tiposFire.js").User}
     usuario */
 async function protege(usuario) {
-  if (tieneRol(usuario,
-    ["Administrador"])) {
+  if (tieneRol(usuario,["Administrador"])) {
     consulta();
   }
 }
 
 function consulta() {
-  daoUsuario.onSnapshot(
-    htmlLista, errConsulta);
+  daoUsuario.onSnapshot(htmlLista, errConsulta);
 }
 
 /**
@@ -53,10 +46,8 @@ async function htmlLista(snap) {
     /** @type {
           Promise<string>[]} */
     let usuarios = [];
-    snap.forEach(doc => usuarios.
-      push(htmlFila(doc)));
-    const htmlFilas =
-      await Promise.all(usuarios);
+    snap.forEach(doc => usuarios.push(htmlFila(doc)));
+    const htmlFilas = await Promise.all(usuarios);
     /* Junta el todos los
      * elementos del arreglo en
      * una cadena. */
@@ -64,8 +55,7 @@ async function htmlLista(snap) {
   } else {
     html += /* html */
       `<li class="vacio">
-        -- No hay usuarios
-        registrados. --
+        -- No hay registros. --
       </li>`;
   }
   lista.innerHTML = html;
@@ -80,33 +70,24 @@ async function htmlFila(doc) {
    * @type {import("./tipos.js").
                       Usuario} */
   const data = doc.data();
-  const img = cod(
-    await urlStorage(doc.id));
-  const alumno =
-    await buscaAlumno(
-      data.alumnoId);
-  const roles =
-    await buscaRoles(data.rolIds);
-  const parámetros =
-    new URLSearchParams();
+  const img = cod(await urlStorage(doc.id));
+  const alumno = await buscaAlumno(data.alumnoId);
+  const roles = await buscaRoles(data.rolIds);
+  const parámetros = new URLSearchParams();
   parámetros.append("id", doc.id);
   return (/* html */
     `<li>
-      <a class="fila conImagen"
-          href=
-    "usuario.html?${parámetros}">
+      <a class="fila conImagen" href=  "usuario.html?${parámetros}">
         <span class="marco">
           <img src="${img}"
-            alt="Falta el Avatar">
+            alt="Sin justificante">
         </span>
         <span class="texto">
           <strong
-              class="primario">
-            ${cod(doc.id)}
+            class="primario"> ${cod(doc.id)}
           </strong>
           <span
-              class="secundario">
-            ${alumno}<br>
+            class="secundario"> ${alumno}<br>
             ${roles}
           </span>
         </span>
