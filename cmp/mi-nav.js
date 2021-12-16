@@ -17,6 +17,17 @@ class MiNav extends HTMLElement {
           <a href="index.html">
             Usuario</a>
         </li>
+        <li>
+        <a href="Alumnos.html">
+          Checar Entrada/Salida</a>
+      </li>
+      <li>
+        <a href="usuarioNuevo.html">
+          Justificar inasistencia</a>
+      </li>
+      <li>
+        <a href="chat.html">  Contacto</a>
+      </li>
       </ul>`;
     this.ul =
       this.querySelector("ul");
@@ -52,10 +63,10 @@ class MiNav extends HTMLElement {
             "Administrador")) {
             html += /* html */
               `<li>
-                <a href="alumnos.html">Alumnos</a>
+                <a href="usuarioNuevo.html">Dar de alta </a>
               </li>
               <li>
-                <a href="usuarios.html">Usuarios</a>
+                <a href="usuarios.html">Ver registro</a>
               </li>`;
           }
           this.ul.innerHTML += html;
