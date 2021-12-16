@@ -116,8 +116,8 @@ export function
           ${checked}>
         <span class="texto">
           <strong
-              class="primario">
-            ${cod(doc.id)}
+              class="primario"> ${cod(doc.id)} 
+              <!-- email -->
           </strong>
           <span
               class="secundario">
