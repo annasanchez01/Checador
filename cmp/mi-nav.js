@@ -17,16 +17,8 @@ class MiNav extends HTMLElement {
           <a href="index.html">
             Usuario</a>
         </li>
-        <li>
-        <a href="Alumnos.html">
-          Checar Entrada/Salida</a>
-      </li>
       <li>
-        <a href="usuarioNuevo.html">
-          Justificar inasistencia</a>
-      </li>
-      <li>
-        <a href="chat.html">  Contacto</a>
+        <a href="chat.html"> Pide darte de alta como cliente</a>
       </li>
       </ul>`;
     this.ul =
@@ -52,6 +44,14 @@ class MiNav extends HTMLElement {
           if (roles.has("Cliente")) {
             html += /* html */
               `<li>
+               <a href="Alumnos.html">
+                Checar Entrada/Salida</a>
+              </li>
+              <li>
+               <a href="usuarioNuevo.html">
+                 Justificar inasistencia</a>
+              </li>
+              <li>
                 <a href=
                   "chat.html">Chat</a>
               </li>`;
