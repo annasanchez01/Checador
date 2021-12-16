@@ -27,8 +27,7 @@ getAuth().onAuthStateChanged(
     "../lib/tiposFire.js").User}
     usuario */
 async function protege(usuario) {
-  if (tieneRol(usuario,
-    ["Administrador"])) {
+  if (tieneRol(usuario, ["Administrador"])) {
     forma.addEventListener(
       "submit", guarda);
     selectAlumnos(forma.alumnoId, "");
@@ -38,10 +37,7 @@ async function protege(usuario) {
 
 /** @param {Event} evt */
 async function guarda(evt) {
-  const formData =
-    new FormData(forma);
-  const id = getString(
-    formData, "cue").trim();
-  await guardaUsuario(evt,
-    formData, id);
+  const formData = new FormData(forma);
+  const id = getString(formData, "email").trim();
+  await guardaUsuario(evt,formData, id);
 }
