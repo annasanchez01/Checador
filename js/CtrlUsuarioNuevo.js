@@ -31,7 +31,9 @@ async function protege(usuario) {
     ["Administrador"])) {
     forma.addEventListener(
       "submit", guarda);
-
+    selectAlumnos(
+      forma.alumnoId, "");
+    checksRoles(listaRoles, []);
   }
 }
 
