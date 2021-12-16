@@ -7,31 +7,25 @@ import {
   muestraError
 } from "../lib/util.js";
 import {
-  muestraAlumnos
+  muestraEmpleados
 } from "./navegacion.js";
 import {
   tieneRol
 } from "./seguridad.js";
 
-const daoAlumno =
-  getFirestore().
-    collection("Alumno");
-const params =
-  new URL(location.href).
-    searchParams;
+const daoEmpleado = getFirestore().collection("Empleado");
+const params = new URL(location.href).searchParams;
 const id = params.get("id");
 /** @type {HTMLFormElement} */
 const forma = document["forma"];
 
-getAuth().onAuthStateChanged(
-  protege, muestraError);
+getAuth().onAuthStateChanged(protege, muestraError);
 
 /** @param {import(
     "../lib/tiposFire.js").User}
     usuario */
 async function protege(usuario) {
-  if (tieneRol(usuario,
-    ["Administrador"])) {
+  if (tieneRol(usuario, ["Administrador"])) {
     busca();
   }
 }
@@ -41,9 +35,7 @@ async function protege(usuario) {
 async function busca() {
   try {
     const doc =
-      await daoAlumno.
-        doc(id).
-        get();
+      await daoEmpleado.doc(id).get();
     if (doc.exists) {
       /**
        * @type {
@@ -52,21 +44,19 @@ async function busca() {
       const data = doc.data();
       forma.matricula.value = data.matricula;
       forma.nombre.value = data.nombre || "";
-      forma.telefono.value = data.telefono || "";
-      forma.grupo.value = data.grupo || "";
+      forma.hora.value = data.hora || "";
       forma.fecha.value = data.fecha || "";
       forma.addEventListener(
         "submit", guarda);
       forma.eliminar.
-        addEventListener(
-          "click", elimina);
+        addEventListener("click", elimina);
     } else {
       throw new Error(
         "No se encontró.");
     }
   } catch (e) {
     muestraError(e);
-    muestraAlumnos();
+    muestraEmpleados();
   }
 }
 
@@ -76,12 +66,10 @@ async function guarda(evt) {
     evt.preventDefault();
     const formData =
       new FormData(forma);
-    const matricula = getString(
-        formData, "matricula").trim();  
+    const matricula = getString(formData, "matricula").trim();  
     const nombre = getString(formData, "nombre").trim();
-    const telefono = getString(formData, "telefono").trim();
-    const grupo = getString(formData, "grupo").trim();
     const fecha = getString(formData, "fecha").trim();
+    const hora = getString(formData, "hora").trim();
     /**
      * @type {
         import("./tipos.js").
@@ -89,14 +77,13 @@ async function guarda(evt) {
     const modelo = {
       matricula, 
       nombre,
-      telefono,
-      grupo,
-      fecha
+      fecha,
+      hora
     };
-    await daoAlumno.
+    await daoEmpleado.
       doc(id).
       set(modelo);
-    muestraAlumnos();
+      muestraEmpleados();
   } catch (e) {
     muestraError(e);
   }
@@ -104,12 +91,11 @@ async function guarda(evt) {
 
 async function elimina() {
   try {
-    if (confirm("Confirmar la " +
-      "eliminación")) {
-      await daoAlumno.
+    if (confirm("Confirmar la " +  "eliminación")) {
+      await daoEmpleado.
         doc(id).
         delete();
-      muestraAlumnos();
+        muestraEmpleados();
     }
   } catch (e) {
     muestraError(e);

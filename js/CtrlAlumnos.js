@@ -12,15 +12,10 @@ import {
 } from "./seguridad.js";
 
 /** @type {HTMLUListElement} */
-const lista = document.
-  querySelector("#lista");
-const daoAlumno =
-  getFirestore().
-    collection("Alumno");
+const lista = document.querySelector("#lista");
+const daoEmpleado = getFirestore().collection("Empleado");
 
-getAuth().
-  onAuthStateChanged(
-    protege, muestraError);
+getAuth().onAuthStateChanged(protege, muestraError);
 
 /** @param {import(
     "../lib/tiposFire.js").User}
@@ -32,9 +27,7 @@ async function protege(usuario) {
 }
 
 function consulta() {
-  daoAlumno.
-    orderBy("nombre")
-    .onSnapshot(
+  daoEmpleado.orderBy("nombre").onSnapshot(
       htmlLista, errConsulta);
 }
 
