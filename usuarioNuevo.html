@@ -1,43 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width,
-       initial-scale=1.0">
-  <title>Usuario Nuevo</title>
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js">
-    </script>
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js">
-    </script>
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js">
-    </script>
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js">
-    </script>
-  <script src="js/init.js">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registrar</title>
+
+     <!-- Carga el núcleo de Firebase JS SDK-->
+  <script 
+  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js">
   </script>
-  <script type="module"
-    src="cmp/mi-nav.js">
-    </script>
-  <script type="module"
-    src="cmp/mi-footer.js">
-    </script>
-  <script type="module"
-    src="cmp/mi-progreso.js">
-    </script>
-  <link rel="stylesheet"
-    href="css/estilos.css">
+  <!-- Agrega el manejo deautenticación.-->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <!--Agrega el manejo de bases de datos.-->
+<script  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<!--Configura la app usando la información del sitio deFirebase.-->
+<script src="js/init.js"></script>
+<script type="module" src="cmp/mi-nav.js"></script>
+<script type="module"src="cmp/mi-progreso.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
   <header class="site-header inicio">
     <div class="contenedor contenido-header">
         <div class="barra">
-            <a href="/ProyectoWeb/">
+            <a href="/Checador/index.html">
                 <img src="img/Imagen.jpg" alt="Logotipo">
             </a>
 
@@ -51,26 +42,24 @@
                 <script type="module" src="cmp/mi-nav.js"></script>
             </nav>
         </div>
-      </div> 
+      </div> <!-- contenedor -->
 </header>
 
-  <section class="contenedor seccion">
-    <form class="contacto" name="forma">
-      <h1>Usuario Nuevo</h1>
+  <main class="contenedor seccion contenido-centrado">
+  <h2 class="fw-300 centrar-texto">Usuario Nuevo </h2>
+    <form name="forma">
         <a href="usuarios.html" class="boton boton-amarillo"> Cancelar</a>
         <button type="submit"class="boton boton-verde"> Guardar </button>
       </div>
-    <p>
-      <label>
-        Email
-        <input name="email"
-          type="email" required>
-      </label>
-    </p>
+
+      <fieldset>
+        <label for="mensaje"> Email: </label>    
+        <input name="email" type="email" required>
+    </fieldset>
+
     <fieldset>
       <legend>Roles</legend>
-      <ul id="listaRoles"
-        class="checks">
+      <ul id="listaRoles" class="checks">
         <li>
           <mi-progreso>
           </mi-progreso>
@@ -78,10 +67,10 @@
       </ul>
     </fieldset>
   </form>
-</section>
-  <script type="module"
-    src="js/CtrlUsuarioNuevo.js">
-    </script>
+</main>
+
+  <script type="module" src="js/CtrlUsuarioNuevo.js"> </script>
+  
     <footer class="site-footer seccion">
       <div class="contenedor contenedor-footer">
           <nav class="navegacion">
