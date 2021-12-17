@@ -25,13 +25,12 @@ getAuth().onAuthStateChanged(protege, muestraError);
 async function protege(usuario) {
   if (tieneRol(usuario,["Cliente"])) {
     forma.addEventListener("submit", guarda);
-
-  }
+     }
 }
 
 /** @param {Event} evt */
 async function guarda(evt) {
   const formData = new FormData(forma);
-  const id = getString( formData, "nombre").trim();
+  const id = getString(formData, "nombre").trim();
   await guardaUsuario(evt,formData, id);
 }
