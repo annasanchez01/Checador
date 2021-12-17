@@ -71,7 +71,7 @@ function htmlFila(doc) {
   return ( /* html */
     `<li>
         <strong class="primario">
-         ${nombre} ${dformat}${espacio} ${hr} ${espacio}${matricula}
+         ${nombre} ${espacio}${dformat}${espacio} ${hr} 
         </strong>
     
     </li>`);
