@@ -36,16 +36,8 @@ async function guarda(evt) {
 
     const matricula = getString(formData, "matricula").trim();  
     const nombre = getString(formData, "nombre").trim();
-
-    var today = new Date();
-    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-      document.getElementById("fecha").value = date;
-
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    document.getElementById("hora").value = time;
-
-    const fechas = getString(formData, "date").trim();
-    const horas = getString(formData, "time").trim();
+    const fecha = getString(formData, "fecha").trim();
+    const hora = getString(formData, "hora").trim();
     /**
      * @type {
         import("./tipos.js").
@@ -53,8 +45,8 @@ async function guarda(evt) {
     const modelo = {
       matricula,
       nombre,
-      fechas,
-      horas
+      fecha,
+      hora
     };
     await daoEmpleado.add(modelo);
     muestraEmpleados();

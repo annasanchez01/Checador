@@ -6,7 +6,7 @@
     content="width=device-width,
        initial-scale=1.0">
   <title>
-    Checador
+    Alumno Nuevo
   </title>
   <script
     src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
@@ -29,7 +29,7 @@
   <form name="forma">
     <mi-nav></mi-nav>
     <header>
-      <h1>Checador: </h1>
+      <h1>Checad9r</h1>
       <div class="herramientas">
         <a
           href="Registro.html">
@@ -56,13 +56,15 @@
     <p>
       <label>
         Fecha
-        <br><input type="text" id="fecha">
+        <input name="fecha"
+          type="date" required>
       </label>
     </p>
     <p>
       <label>
         Hora
-        <br><input type="text" id="hora">
+        <input name="hora"
+          type="time" required>
       </label>
     </p>
     <mi-footer></mi-footer>
