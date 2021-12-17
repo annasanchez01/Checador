@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registrar</title>
-
-     <!-- Carga el núcleo de Firebase JS SDK-->
-  <script 
-  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width,
+       initial-scale=1.0">
+  <title>Usuario Nuevo</title>
+  <script
+    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js">
+    </script>
+  <script
+    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js">
+    </script>
+  <script
+    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js">
+    </script>
+  <script
+    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js">
+    </script>
+  <script src="js/init.js">
   </script>
-  <!-- Agrega el manejo deautenticación.-->
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <!--Agrega el manejo de bases de datos.-->
-<script  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-
-<!--Configura la app usando la información del sitio deFirebase.-->
-<script src="js/init.js"></script>
-<script type="module" src="cmp/mi-nav.js"></script>
-<script type="module"src="cmp/mi-footer.js"></script>
-<script type="module"src="cmp/mi-progreso.js"></script>
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilos.css">
+  <script type="module"
+    src="cmp/mi-nav.js">
+    </script>
+  <script type="module"
+    src="cmp/mi-footer.js">
+    </script>
+  <script type="module"
+    src="cmp/mi-progreso.js">
+    </script>
+  <link rel="stylesheet"
+    href="css/estilos.css">
 </head>
-<body>
-  <header class="site-header inicio">
-    <div class="contenedor contenido-header">
-        <div class="barra">
-            <a href="/ProyectoWeb/">
-                <img src="img/Imagen.jpg" alt="Logotipo">
-            </a>
 
-            <div class="mobile-menu">
-                <a href="#navegacion">
-                    <img src="img/barras.svg" alt="Icono Menu">
-                </a>
-            </div>
-            <nav id="navegacion" class="navegacion">
-            <mi-nav></mi-nav>
-                <script type="module" src="cmp/mi-nav.js"></script>
-            </nav>
-        </div>
-      </div> 
-</header>
-  <main class="contenedor seccion contenido-centrado"></main>
-  <form class="contacto" name="forma">
+<body>
+  <section class="contenedor seccion">
+  <form name="forma">
+    <mi-nav></mi-nav>
+    <header>
       <h1>Usuario Nuevo</h1>
-        <a href="index.html"> Cancelar</a>
-        <button type="submit"> Guardar </button>
+      <div class="herramientas">
+        <a href="usuarios.html">
+          Cancelar</a>
+        <button type="submit">
+          Guardar
+        </button>
       </div>
+    </header>
     <p>
       <label>
         Email
@@ -57,6 +54,10 @@
           type="email" required>
       </label>
     </p>
+    <!--
+      Maneja una asociación a
+      muchos.
+    -->
     <fieldset>
       <legend>Roles</legend>
       <ul id="listaRoles"
@@ -68,19 +69,18 @@
       </ul>
     </fieldset>
   </form>
-</main>
-
+</section>
   <script type="module"
     src="js/CtrlUsuarioNuevo.js">
     </script>
-  <footer class="site-footer seccion">
-    <div class="contenedor contenedor-footer">
-        <nav class="navegacion">
-            <mi-nav></mi-nav>
-            <script type="module" src="cmp/mi-nav.js"></script>
-        </nav>
-        <p class="copyright">Ana Paula Sánchez Villanueva &copy; </p>
-    </div>
-  </footer>
+    <footer class="site-footer seccion">
+      <div class="contenedor contenedor-footer">
+          <nav class="navegacion">
+              <mi-nav></mi-nav>
+              <script type="module" src="cmp/mi-nav.js"></script>
+          </nav>
+          <p class="copyright">Ana Paula Sánchez Villanueva &copy; </p>
+      </div>
+    </footer>
 </body>
 </html>
