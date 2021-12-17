@@ -1,56 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width,
-       initial-scale=1.0">
-  <title>Chat</title>
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js">
-    </script>
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js">
-    </script>
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js">
-    </script>
-  <script src="js/init.js">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registrar</title>
+
+     <!-- Carga el núcleo de Firebase JS SDK-->
+  <script 
+  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js">
   </script>
-  <script type="module"
-    src="cmp/mi-nav.js">
-    </script>
-  <script type="module"
-    src="cmp/mi-footer.js">
-    </script>
-  <script type="module"
-    src="cmp/mi-progreso.js">
-    </script>
-  <link rel="stylesheet"
-    href="css/estilos.css">
+  <!-- Agrega el manejo deautenticación.-->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <!--Agrega el manejo de bases de datos.-->
+<script  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<!--Configura la app usando la información del sitio deFirebase.-->
+<script src="js/init.js"></script>
+<script type="module" src="cmp/mi-nav.js"></script>
+<script type="module"src="cmp/mi-footer.js"></script>
+<script type="module"src="cmp/mi-progreso.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-  <mi-nav></mi-nav>
+  <header class="site-header inicio">
+    <div class="contenedor contenido-header">
+        <div class="barra">
+            <a href="/ProyectoWeb/">
+                <img src="img/Imagen.jpg" alt="Logotipo">
+            </a>
+
+            <div class="mobile-menu">
+                <a href="#navegacion">
+                    <img src="img/barras.svg" alt="Icono Menu">
+                </a>
+            </div>
+            <nav id="navegacion" class="navegacion">
+            <mi-nav></mi-nav>
+                <script type="module" src="cmp/mi-nav.js"></script>
+            </nav>
+        </div>
+      </div> <!-- contenedor -->
+</header>
+<body>
+
+  <main class="contenedor seccion contenido-centrado">
+    <h2 class="fw-300 centrar-texto">Chat </h2>
+
   <form name="forma">
-    <header>
-      <h1>Chat</h1>
-      <div class="herramientas">
-        <input name="texto"
-          required
-          placeholder="Mensaje">
-        <button>Enviar</button>
-      </div>
-    </header>
-    <ul id="lista" class="lista">
+    <fieldset>
+      <label for="mensaje"> Escribe tu mensaje: </label>    
+        <input name="texto" required placeholder="Mensaje">
+      <button class="boton boton-azul"> Enviar </button>
+  </fieldset>
+
+  <fieldset>
+    <legend>Mensajes:</legend>
+      <ul id="lista" class="lista">
       <li>
         <mi-progreso>
         </mi-progreso>
       </li>
     </ul>
-    <mi-footer></mi-footer>
-  </form>
-  <script type="module"
-    src="js/CtrlChat.js">
-    </script>
+
+  </fieldset>
+    
+    </fieldset>
+    </form>
+  </main> 
+
+  <script type="module"src="js/CtrlChat.js"></script>
+
+    <footer class="site-footer seccion">
+      <div class="contenedor contenedor-footer">
+          <nav class="navegacion">
+              <mi-nav></mi-nav>
+              <script type="module" src="cmp/mi-nav.js"></script>
+          </nav>
+          <p class="copyright">Ana Paula Sánchez Villanueva &copy; </p>
+      </div>
+    </footer>
 </body>
 </html>

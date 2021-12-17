@@ -1,77 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width,
-       initial-scale=1.0">
-  <title>
-    Checar
-  </title>
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="js/init.js">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registrar</title>
+
+     <!-- Carga el núcleo de Firebase JS SDK-->
+  <script 
+  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js">
   </script>
-  <script type="module"
-    src="cmp/mi-nav.js">
-    </script>
-  <script type="module"
-    src="cmp/mi-footer.js">
-    </script>
-  <link rel="stylesheet"
-    href="css/estilos.css">
+  <!-- Agrega el manejo deautenticación.-->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <!--Agrega el manejo de bases de datos.-->
+<script  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<!--Configura la app usando la información del sitio deFirebase.-->
+<script src="js/init.js"></script>
+<script type="module" src="cmp/mi-nav.js"></script>
+<script type="module"src="cmp/mi-footer.js"></script>
+<script type="module"src="cmp/mi-progreso.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-  <form name="forma">
-    <mi-nav></mi-nav>
-    <header>
-      <h1>Checar</h1>
-      <div class="herramientas">
-        <a
-          href="alumnos.html">
-          Cancelar</a>
-        <button type="submit">
-          Guardar
-        </button>
-      </div>
-    </header>
-    <p>
-      <label>
-        Número de empleado
-        <input name="matricula"
-          type="text" required>
-      </label>
-    </p>
-    <p>
-      <label>
-        Nombre
-        <input name="nombre"
-          type="text" required>
-      </label>
-    </p>
-    <p>
-      <label>
-        Fecha
-        <input name="fecha"
-          type="date" required>
-      </label>
-    </p>
-    <p>
-      <label>
-        Hora
-        <input name="hora"
-          type="time" required>
-      </label>
-    </p>
-    <mi-footer></mi-footer>
+  <header class="site-header inicio">
+    <div class="contenedor contenido-header">
+        <div class="barra">
+            <a href="/ProyectoWeb/">
+                <img src="img/Imagen.jpg" alt="Logotipo">
+            </a>
+
+            <div class="mobile-menu">
+                <a href="#navegacion">
+                    <img src="img/barras.svg" alt="Icono Menu">
+                </a>
+            </div>
+            <nav id="navegacion" class="navegacion">
+            <mi-nav></mi-nav>
+                <script type="module" src="cmp/mi-nav.js"></script>
+            </nav>
+        </div>
+      </div> <!-- contenedor -->
+</header>
+<main class="contenedor seccion contenido-centrado">
+  <form class="contacto" name="forma">
+    <h1>Llena los siguientes datos:</h1>
+        <p>
+      <fieldset>
+          <legend>Información Personal</legend>
+          <label for="nombre">Nombre:</label>
+          <input type="text" name="nombre" placeholder="Tu Nombre" required>
+
+          <label for="empleado">Número de empleado: </label>
+          <input type="number" name="matricula" placeholder="No. de empleado" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Checador: </legend>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" required>
+
+        <label for="hora">Hora:</label>
+        <input type="time" name="hora" min="07:00" max="20:00" required>
+    </fieldset>
+
+    <div class="herramientas">
+      <a href="alumnos.html" class="boton boton-amarillo">Cancelar</a>
+      <button type="submit" class="boton boton-verde"> Guardar </button>
+    </div>
   </form>
+</main>
   <script type="module"
-    src="js/CtrlAlumnoNuevo.js">
+  src="js/CtrlChecar.js">
     </script>
+<footer class="site-footer seccion">
+  <div class="contenedor contenedor-footer">
+      <nav class="navegacion">
+          <mi-nav></mi-nav>
+          <script type="module" src="cmp/mi-nav.js"></script>
+      </nav>
+      <p class="copyright">Ana Paula Sánchez Villanueva &copy; </p>
+  </div>
+</footer>
 </body>
 </html>
 
