@@ -32,5 +32,6 @@ async function protege(usuario) {
 async function guarda(evt) {
   const formData = new FormData(forma);
   const id = getString(formData, "nombre").trim();
+  alert("Justificante enviado con éxito");
   await guardaUsuario(evt,formData, id);
 }
