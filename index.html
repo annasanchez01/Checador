@@ -1,90 +1,106 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width,
-       initial-scale=1.0">
-  <title>Sesión</title>
-  <!--
-    Carga el núcleo de Firebase
-    JS SDK
-  -->
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js">
-    </script>
-  <!--
-    Agrega el manejo de
-    autenticación.
-  -->
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js">
-    </script>
-  <!--
-    Agrega el manejo de bases de
-    datos.
-  -->
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js">
-    </script>
-  <!--
-    Configura la app usando la
-    información del sitio de
-    Firebase.
-  -->
-  <script src="js/init.js">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sesión</title>
+
+     <!-- Carga el núcleo de Firebase JS SDK-->
+  <script 
+  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js">
   </script>
-  <script type="module"
-    src="cmp/mi-nav.js">
-    </script>
-  <script type="module"
-    src="cmp/mi-footer.js">
-    </script>
-  <script type="module"
-    src="cmp/mi-progreso.js">
-    </script>
-  <link rel="stylesheet"
-    href="css/estilos.css">
+  <!-- Agrega el manejo deautenticación.-->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <!--Agrega el manejo de bases de datos.-->
+<script  src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<!--Configura la app usando la información del sitio deFirebase.-->
+<script src="js/init.js"></script>
+<script type="module" src="cmp/mi-nav.js"></script>
+<script type="module"src="cmp/mi-footer.js"></script>
+<script type="module"src="cmp/mi-progreso.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+   
 </head>
 <body>
- <form name="forma">
-    <mi-nav></mi-nav>
-    <header>
-      <h1>Sesión</h1>
-      <div class="herramientas">
-        <button
-          type="button"
-          name="terminarSesión">
-          Terminar Sesión
-        </button>
-      </div>
+  <form name="forma">
+    <header class="site-header inicio">
+        <div class="contenedor contenido-header">
+            <div class="barra">
+                <a href="https://annasanchez01.github.io/ProyectoWeb/">
+                    <img src="img/Imagen.jpg" alt="Logotipo">
+                </a>
+
+                <div class="mobile-menu">
+                    <a href="#navegacion">
+                        <img src="img/barras.svg" alt="Icono Menu">
+                    </a>
+                </div>
+                <nav id="navegacion" class="navegacion">
+                <mi-nav></mi-nav>
+                    <script type="module" src="cmp/mi-nav.js"></script>
+                </nav>
+            </div>
+          </div> 
     </header>
-    <figure>
-      <img id="avatar" src=""
-        alt="Avatar">
-    </figure>
-    <p>
-      <label>
-        Email
-        <output name="email">
-          <mi-progreso>
-          </mi-progreso>
-        </output>
-      </label>
-    </p>
-    <p>
-      <label>
-        Nombre
-        <output name="nombre">
-          <mi-progreso>
-          </mi-progreso>
-        </output>
-      </label>
-    </p>
-    <mi-footer></mi-footer>
+
+    <section class="contenedor seccion">
+        <h2 class="fw-300 centrar-texto">Bienvenido</h2>
+        <figure>
+            <img id="avatar" src=""
+              alt="Avatar">
+          </figure>
+          <p>
+            <label>
+              Nombre: 
+              <output name="nombre">
+                <mi-progreso>
+                </mi-progreso>
+              </output>
+            </label>
+          </p>
+
+          <p>
+            <label>
+              Email: 
+              <output name="email">
+                <mi-progreso>
+                </mi-progreso>
+              </output>
+            </label>
+          </p>
+ 
+          <button  type="button" name="terminarSesión" class="boton boton-morado">
+          Cerrar Sesión
+        </button>
   </form>
-  <script type="module"
-    src="js/CtrlSesion.js">
-    </script>
+    </section>
+          
+    <section class="imagen-contacto">
+        <div class="contenedor contenido-contacto">
+            <h2>Registra tu Asistencia</h2>
+            <p>O contactános</p>
+            <a href="registrar.html" class="boton boton-verde">Registro</a>
+            <a href="chat.html" class="boton boton-amarillo">Contactános</a>
+        </div>
+    </section>
+
+
+<script type="module"
+  src="js/CtrlSesion.js">
+  </script>
+  
+    <footer class="site-footer seccion">
+        <div class="contenedor contenedor-footer">
+            <nav class="navegacion">
+                <mi-nav></mi-nav>
+                <script type="module" src="cmp/mi-nav.js"></script>
+            </nav>
+            <p class="copyright">Ana Paula Sánchez Villanueva &copy; </p>
+        </div>
+    </footer>
 </body>
 </html>
