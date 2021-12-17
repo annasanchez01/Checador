@@ -131,8 +131,6 @@ async function buscaRoles(ids) {
       const data = doc.data();
       html += /* html */
         `<em>${cod(doc.id)}</em>
-        <br>
-        ${cod(data.descripción)}
         <br>`;
     }
     return html;

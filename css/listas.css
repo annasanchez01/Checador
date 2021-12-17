@@ -32,8 +32,9 @@ a.fila:active {
   font-size: 2.5rem;
 }
 .tercero {
+  text-align: left;
   display:inline;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 label.fila,
