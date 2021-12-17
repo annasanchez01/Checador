@@ -34,10 +34,27 @@
     href="css/estilos.css">
 </head>
 <body>
-  <mi-nav></mi-nav>
+  <header class="site-header inicio">
+    <div class="contenedor contenido-header">
+        <div class="barra">
+            <a href="/ProyectoWeb/">
+                <img src="img/Imagen.jpg" alt="Logotipo">
+            </a>
+            <div class="mobile-menu">
+                <a href="#navegacion">
+                    <img src="img/barras.svg" alt="Icono Menu">
+                </a>
+            </div>
+            <nav id="navegacion" class="navegacion">
+            <mi-nav></mi-nav>
+                <script type="module" src="cmp/mi-nav.js"></script>
+            </nav>
+        </div>
+      </div> 
+</header>
   <main class="contenedor seccion contenido-centrado">
     <h1>Usuarios</h1>
-      <a href="usuarioNuevo.html"> Agregar…</a>
+      <a href="usuarioNuevo.html"> Nuevo usuario</a>
   <ul id="lista" class="lista">
     <li>
       <mi-progreso>
