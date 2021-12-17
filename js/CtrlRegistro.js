@@ -41,7 +41,8 @@ function htmlLista(snap) {
   } else {
     html += /* html */
       `<li class="vacio">
-        -- No hay registros. --
+        -- No hay registros
+        registrados. --
       </li>`;
   }
   lista.innerHTML = html;
@@ -58,19 +59,19 @@ function htmlFila(doc) {
   const data = doc.data();
   const matricula = cod(data.matricula);
   const nombre = cod(data.nombre);
-  var fecha= cod(data.fecha);
-  //var fecha = new Date(fsf);
-  var hora = cod(data.hora);
+  var fsf= cod(data.fecha);
+  var fecha = new Date(fsf);
+  var hr = cod(data.hora);
 
   var espacio="[   -   ]";
- // var dformat = [fecha.getDate()+1, fecha.getMonth()+1, fecha.getFullYear()].join('/');
+  var dformat = [fecha.getDate()+1, fecha.getMonth()+1, fecha.getFullYear()].join('/');
   const parámetros =
     new URLSearchParams();
   parámetros.append("id", doc.id);
   return ( /* html */
     `<li>
         <strong class="primario">
-         ${nombre} ${fecha}${espacio} ${hora} ${espacio}${matricula}
+         ${nombre} ${dformat}${espacio} ${hr} ${espacio}${matricula}
         </strong>
     
     </li>`);
