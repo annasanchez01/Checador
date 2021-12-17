@@ -37,11 +37,16 @@ async function guarda(evt) {
     const matricula = getString(formData, "matricula").trim();  
     const nombre = getString(formData, "nombre").trim();
 
+    var forma = document.getElementById("forma"),
+        fechas =document.getElementById("fecha"),
+        horas = document.getElementById("hora");
+
     var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    document.getElementById("fecha").value = date;
-    document.getElementById("hora").value = time;
+
+    document.getElementById("fechas").value = date;
+    document.getElementById("horas").value = time;
 
     const fecha = getString(formData, "date").trim();
     const hora = getString(formData, "time").trim();
