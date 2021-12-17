@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Usuario</title>
+    <title>Usuarios</title>
 
      <!-- Carga el núcleo de Firebase JS SDK-->
   <script 
@@ -22,15 +22,31 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
-   
-</head>
+   </head>
 <body>
-  <main class="contenedor seccion contenido-centrado">
+  <header class="site-header inicio">
+    <div class="contenedor contenido-header">
+        <div class="barra">
+            <a href="/ProyectoWeb/">
+                <img src="img/Imagen.jpg" alt="Logotipo">
+            </a>
 
+            <div class="mobile-menu">
+                <a href="#navegacion">
+                    <img src="img/barras.svg" alt="Icono Menu">
+                </a>
+            </div>
+            <nav id="navegacion" class="navegacion">
+            <mi-nav></mi-nav>
+                <script type="module" src="cmp/mi-nav.js"></script>
+            </nav>
+        </div>
+      </div> 
+</header>
+
+  <main class="contenedor seccion contenido-centrado">
     <h1>Usuarios</h1>
-    <div class="herramientas">
-      <a href="usuarioNuevo.html">
-        Agregar…</a>
+      <a href="usuarioNuevo.html"class="boton boton-azul">Nuevo Usuario</a>
     </div>
 
   <ul id="lista" class="lista">
