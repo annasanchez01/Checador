@@ -18,26 +18,31 @@ import {
 import {
   checksRoles,
   guardaUsuario,
-  selectEmpleados
+  selectAlumnos
 } from "./usuarios.js";
 
-const params = new URL(location.href).searchParams;
+const params =
+  new URL(location.href).
+    searchParams;
 const id = params.get("id");
-const daoUsuario = getFirestore().collection("Usuario");
-
+const daoUsuario = getFirestore().
+  collection("Usuario");
 /** @type {HTMLFormElement} */
 const forma = document["forma"];
-const img = document.querySelector("img");
+const img = document.
+  querySelector("img");
 /** @type {HTMLUListElement} */
-const listaRoles = document.querySelector("#listaRoles");
-
-getAuth().onAuthStateChanged(protege, muestraError);
+const listaRoles = document.
+  querySelector("#listaRoles");
+getAuth().onAuthStateChanged(
+  protege, muestraError);
 
 /** @param {import(
     "../lib/tiposFire.js").User}
     usuario */
 async function protege(usuario) {
-  if (tieneRol(usuario,["Administrador"])) {
+  if (tieneRol(usuario,
+    ["Administrador"])) {
     busca();
   }
 }
@@ -45,14 +50,16 @@ async function protege(usuario) {
 async function busca() {
   try {
     const doc = await daoUsuario.
-      doc(id).get();
+      doc(id).
+      get();
     if (doc.exists) {
       const data = doc.data();
       forma.cue.value = id || "";
-      img.src = await urlStorage(id);
-      selectEmpleados(
-        forma.usuarioId,
-        data.usuarioId)
+      img.src =
+        await urlStorage(id);
+      selectAlumnos(
+        forma.alumnoId,
+        data.alummnoId)
       checksRoles(
         listaRoles, data.rolIds);
       forma.addEventListener(
@@ -75,8 +82,10 @@ async function guarda(evt) {
 
 async function elimina() {
   try {
-    if (confirm("Confirmar la " + "eliminación")) {
-      await daoUsuario.doc(id).delete();
+    if (confirm("Confirmar la " +
+      "eliminación")) {
+      await daoUsuario.
+        doc(id).delete();
       await eliminaStorage(id);
       muestraUsuarios();
     }
