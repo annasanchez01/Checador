@@ -34,17 +34,33 @@
 </head>
 
 <body>
+  <header class="site-header inicio">
+    <div class="contenedor contenido-header">
+        <div class="barra">
+            <a href="/ProyectoWeb/">
+                <img src="img/Imagen.jpg" alt="Logotipo">
+            </a>
+
+            <div class="mobile-menu">
+                <a href="#navegacion">
+                    <img src="img/barras.svg" alt="Icono Menu">
+                </a>
+            </div>
+            <nav id="navegacion" class="navegacion">
+            <mi-nav></mi-nav>
+                <script type="module" src="cmp/mi-nav.js"></script>
+            </nav>
+        </div>
+      </div> 
+</header>
+
   <section class="contenedor seccion">
-  <form name="forma">
+    <form class="contacto" name="forma">
     <mi-nav></mi-nav>
     <header>
       <h1>Usuario Nuevo</h1>
-      <div class="herramientas">
-        <a href="usuarios.html">
-          Cancelar</a>
-        <button type="submit">
-          Guardar
-        </button>
+        <a href="usuarios.html" class="boton boton-amarillo"> Cancelar</a>
+        <button type="submit"class="boton boton-azul"> Guardar </button>
       </div>
     </header>
     <p>
